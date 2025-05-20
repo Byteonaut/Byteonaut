@@ -1,0 +1,21 @@
+<svg width="100%" height="80" viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff00ff"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </linearGradient>
+    <filter id="titleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="80" fill="none" />
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Orbitron', sans-serif" font-size="26"
+        fill="url(#titleGradient)" filter="url(#titleGlow)">
+    👨‍💻 Full-Stack Developer • Python • React • Mobile • AI
+  </text>
+</svg>

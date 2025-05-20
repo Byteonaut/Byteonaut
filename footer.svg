@@ -1,0 +1,71 @@
+<svg width="100%" height="160" viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .star {
+      animation: twinkle 3.5s infinite ease-in-out;
+    }
+
+    .star:nth-child(n) {
+      animation-delay: calc(var(--i) * 0.25s);
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; r: 1.3; }
+      50% { opacity: 0.2; r: 1.6; }
+    }
+  </style>
+
+  <defs>
+    <radialGradient id="footerFog" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#ff00ff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff00ff"/>
+      <stop offset="100%" stop-color="#00ffff"/>
+    </linearGradient>
+    <filter id="footerGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="160" fill="#0a0a1a"/>
+
+  <!-- Fog Background -->
+  <circle cx="300" cy="90" r="220" fill="url(#footerFog)" />
+  <circle cx="900" cy="100" r="200" fill="url(#footerFog)" />
+
+  <!-- Stars -->
+  <g fill="#ffffff">
+<circle class="star" cx="100" cy="30" r="1.2" style="--i: 0;" />
+<circle class="star" cx="200" cy="100" r="1.2" style="--i: 1;" />
+<circle class="star" cx="300" cy="50" r="1.2" style="--i: 2;" />
+<circle class="star" cx="400" cy="110" r="1.2" style="--i: 3;" />
+<circle class="star" cx="500" cy="40" r="1.2" style="--i: 4;" />
+<circle class="star" cx="600" cy="80" r="1.2" style="--i: 5;" />
+<circle class="star" cx="700" cy="60" r="1.2" style="--i: 6;" />
+<circle class="star" cx="800" cy="130" r="1.2" style="--i: 7;" />
+<circle class="star" cx="900" cy="30" r="1.2" style="--i: 8;" />
+<circle class="star" cx="1000" cy="70" r="1.2" style="--i: 9;" />
+<circle class="star" cx="150" cy="125" r="1.2" style="--i: 10;" />
+<circle class="star" cx="250" cy="55" r="1.2" style="--i: 11;" />
+<circle class="star" cx="350" cy="90" r="1.2" style="--i: 12;" />
+<circle class="star" cx="450" cy="35" r="1.2" style="--i: 13;" />
+<circle class="star" cx="550" cy="125" r="1.2" style="--i: 14;" />
+<circle class="star" cx="650" cy="45" r="1.2" style="--i: 15;" />
+<circle class="star" cx="750" cy="110" r="1.2" style="--i: 16;" />
+<circle class="star" cx="850" cy="40" r="1.2" style="--i: 17;" />
+<circle class="star" cx="950" cy="100" r="1.2" style="--i: 18;" />
+<circle class="star" cx="1100" cy="65" r="1.2" style="--i: 19;" />
+  </g>
+
+  <!-- Footer Text -->
+  <text x="50%" y="140" dominant-baseline="middle" text-anchor="middle"
+        font-family="monospace" font-size="15" fill="#ffffff" filter="url(#footerGlow)"
+        style="text-shadow: 0 0 6px #0ff;">
+    🛸 Built with stardust &amp; open source magic — see you among the stars!
+  </text>
+</svg>

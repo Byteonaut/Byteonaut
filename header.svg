@@ -1,0 +1,90 @@
+<svg width="100%" height="160" viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .star {
+      animation: twinkle 4s infinite ease-in-out;
+    }
+
+    .star:nth-child(n) {
+      animation-delay: calc(var(--i) * 0.3s);
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.9; r: 1.2; }
+      50% { opacity: 0.2; r: 1.6; }
+    }
+
+    .rocket {
+      font-size: 28px;
+    }
+
+    .rocketPath {
+      offset-path: path("M 50 130 Q 600 20 1150 130 T 50 130");
+      offset-rotate: auto;
+      animation: moveRocket 10s infinite ease-in-out;
+    }
+
+    @keyframes moveRocket {
+      0% { offset-distance: 0%; }
+      50% { offset-distance: 100%; }
+      100% { offset-distance: 0%; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="fog" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="160" fill="#080812"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff">
+    <!-- 20 Stars with variable delay -->
+    <circle class="star" cx="100" cy="30" r="1.2" style="--i: 0;" />
+<circle class="star" cx="200" cy="80" r="1.2" style="--i: 1;" />
+<circle class="star" cx="300" cy="20" r="1.2" style="--i: 2;" />
+<circle class="star" cx="400" cy="70" r="1.2" style="--i: 3;" />
+<circle class="star" cx="500" cy="40" r="1.2" style="--i: 4;" />
+<circle class="star" cx="600" cy="90" r="1.2" style="--i: 5;" />
+<circle class="star" cx="700" cy="30" r="1.2" style="--i: 6;" />
+<circle class="star" cx="800" cy="110" r="1.2" style="--i: 7;" />
+<circle class="star" cx="900" cy="50" r="1.2" style="--i: 8;" />
+<circle class="star" cx="1000" cy="75" r="1.2" style="--i: 9;" />
+<circle class="star" cx="150" cy="120" r="1.2" style="--i: 10;" />
+<circle class="star" cx="250" cy="60" r="1.2" style="--i: 11;" />
+<circle class="star" cx="350" cy="100" r="1.2" style="--i: 12;" />
+<circle class="star" cx="450" cy="35" r="1.2" style="--i: 13;" />
+<circle class="star" cx="550" cy="115" r="1.2" style="--i: 14;" />
+<circle class="star" cx="650" cy="55" r="1.2" style="--i: 15;" />
+<circle class="star" cx="750" cy="90" r="1.2" style="--i: 16;" />
+<circle class="star" cx="850" cy="20" r="1.2" style="--i: 17;" />
+<circle class="star" cx="950" cy="100" r="1.2" style="--i: 18;" />
+<circle class="star" cx="1050" cy="60" r="1.2" style="--i: 19;" />
+  </g>
+
+  <!-- Fog/Nebula -->
+  <circle cx="300" cy="70" r="250" fill="url(#fog)" />
+  <circle cx="900" cy="90" r="200" fill="url(#fog)" />
+
+  <!-- Rocket Emoji Following Path -->
+  <text class="rocket rocketPath">🚀</text>
+
+  <!-- Title -->
+  <text x="50%" y="85" dominant-baseline="middle" text-anchor="middle"
+        font-family="'Orbitron', sans-serif" font-size="34" fill="url(#neonGradient)" filter="url(#glow)">
+    👨‍🚀 Welcome to My Space 👨‍🚀
+  </text>
+</svg>
